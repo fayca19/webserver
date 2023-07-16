@@ -1,0 +1,8 @@
+Options +MultiViews
+
+
+RewriteEngine on
+RewriteRule ^Actes-Supportes/([-a-z0-9A-Z]+)/([-a-z0-9A-Z]+)$   actes.php?row=$1&row1=$2 
+RewriteRule ^Statistique/([-a-z0-9A-Z]+)/([-a-z0-9A-Z]+)/([-a-z0-9A-Z]+)$   etat.php?r0=$1&r1=$2&r2=$3 
+RewriteRule ^Demande-TP/([0-9]*)$  pdem.php?r0==$1 [L]
+RewriteRule ^Facture-TP/([0-9]*)$  pfac.php?r0==$1 [L]

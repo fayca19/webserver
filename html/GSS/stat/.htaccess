@@ -1,0 +1,10 @@
+Options +MultiViews
+
+
+
+RewriteEngine on
+RewriteRule ^Operation.html  stat2.php
+RewriteRule ^Equipe.html  stat3.php
+RewriteRule ^Activite.html  stat.php
+RewriteRule ^production.html  stat4.php
+

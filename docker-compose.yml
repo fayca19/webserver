@@ -1,0 +1,39 @@
+version: '3.8'
+services:
+
+  server:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+     - ./html:/var/www/html/
+     - ./data:/var/www/data/
+     - ./apache/sites-available:/etc/apache2/sites-available/
+     - ./apache/error.log:/var/log/apache2/error.log
+     - ./apache/access.log:/var/log/apache2/access.log
+     - ./php.ini:/etc/php/7.4/fpm/conf.d/update.ini
+    ports:
+      - 80:80
+    networks:
+      - web_server
+    restart: always
+
+  mysql:
+    image: mysql:5.7.40-debian
+    environment:
+      MYSQL_ROOT_PASSWORD: '0000'
+    ports:
+      - '3306:3306'
+    expose:
+      - '3306'
+    volumes:
+      - db-volume:/var/lib/mysql
+    networks:
+      - web_server
+    restart: always
+networks:
+  web_server:
+    driver : bridge
+
+volumes:
+  db-volume:

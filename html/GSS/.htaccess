@@ -1,0 +1,10 @@
+Options +MultiViews
+
+
+RewriteEngine on
+
+RewriteRule ^Acceuil  acceuil.php
+RewriteRule ^Demandes-En-Cours  dencour.php
+RewriteRule ^Demandes-Classees  dclasse.php
+RewriteRule ^Statistique  espace.php
+RewriteRule ^index.html  index.php
